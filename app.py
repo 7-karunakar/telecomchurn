@@ -29,12 +29,12 @@ def predict():
     numeric_fields = ['tenure', 'MonthlyCharges', 'TotalCharges']
     for field in numeric_fields:
         input_data[field] = float(input_data[field])
-    print("hii")
+    
     # Encode categorical inputs
     for column, le in label_encoders.items():
         if column in input_data:
             input_data[column] = le.transform([input_data[column]])[0]
-    print("37 line ")
+    
     # Ensure the input data is in the correct order
     
     input_features = [input_data[column] for column in model_columns]
@@ -42,7 +42,7 @@ def predict():
 
     input_features[0][1] = 1 if input_features[0][1]=="yes" else 0
 
-    print(input_features)
+    
     
     prediction = model.predict(input_features)
     prediction_text = 'Churn' if prediction[0] == 1 else 'No Churn'
