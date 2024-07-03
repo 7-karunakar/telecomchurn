@@ -20,11 +20,11 @@ def predict():
     except:
         print("error")
 
-    print(input_data["tenure"])
+   
 
 
     
-    print(label_encoders)
+    
     # Convert numeric inputs to float
     numeric_fields = ['tenure', 'MonthlyCharges', 'TotalCharges']
     for field in numeric_fields:
